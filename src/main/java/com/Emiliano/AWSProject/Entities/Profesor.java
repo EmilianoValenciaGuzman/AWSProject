@@ -18,6 +18,7 @@ public class Profesor {
     @NotNull(message = "El nombre no puede ser nulo")
     String nombres;
 
+    @NotBlank(message = "El apellido no puede estar en blanco")
     @NotNull(message = "El apellido no puede estar en blanco")
     String apellidos;
 

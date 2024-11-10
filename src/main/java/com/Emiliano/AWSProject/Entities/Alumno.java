@@ -1,27 +1,26 @@
 package com.Emiliano.AWSProject.Entities;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Positive;
+import jakarta.validation.constraints.*;
+
 
 public class Alumno {
     @NotNull(message = "El ID no puede ser nulo")
     private Integer id;
 
     @NotBlank(message = "El nombre no puede estar en blanco")
+    @NotNull(message = "El nombre no puede ser nulo")
     private String nombres;
 
-    @NotBlank(message = "El apellido no puede estar en blanco")
+    @NotNull(message = "El apellido no puede estar en blanco")
     private String apellidos;
 
     @NotNull(message = "La matrícula no puede ser nula")
-    @Pattern(regexp = "^[A-Za-z].*", message = "La matrícula debe comenzar con una letra")
+    @Pattern(regexp = "^[A-Za-z][0-9]+$", message = "La matrícula debe comenzar con una letra")
     private String matricula;
 
     @NotNull(message = "El promedio no puede ser nulo")
     @Positive(message = "El promedio debe ser un número positivo")
-    private Integer promedio;
+    private Double promedio;
 
 
     public Integer getId() { return id; }
@@ -36,6 +35,6 @@ public class Alumno {
     public String getMatricula() { return matricula; }
     public void setMatricula(String matricula) { this.matricula = matricula; }
 
-    public Integer getPromedio() { return promedio; }
-    public void setPromedio(Integer promedio) { this.promedio = promedio; }
+    public Double getPromedio() { return promedio; }
+    public void setPromedio(Double promedio) { this.promedio = promedio; }
 }

@@ -51,6 +51,4 @@ public class AlumnoService {
         }
         throw new IllegalArgumentException("No se pudo eliminar al alumno con el id " + id);
     }
-
-
 }

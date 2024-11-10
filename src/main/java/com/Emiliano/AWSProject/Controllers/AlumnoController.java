@@ -6,7 +6,6 @@ import com.Emiliano.AWSProject.Entities.Alumno;
 import com.Emiliano.AWSProject.Services.AlumnoService;
 
 import java.util.List;
-
 import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,18 +19,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 
 
-
-
 @RestController 
 public class AlumnoController {
 
     @Autowired
     private AlumnoService alumnoService;
-    
-    @GetMapping("/") // This annotation tells Spring that this method will be called when a GET request is made to the root URL
-    public String getMethodName() {
-        return "Hola estoy en PRIMERA ENTREGA";
-    }
 
     @PostMapping("/alumnos")
     public ResponseEntity<Alumno> postAlumno(@Valid @RequestBody Alumno alumno) {

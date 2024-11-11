@@ -12,6 +12,7 @@
 	<artifactId>AWSProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>AWSProject</name>
+	<packaging>jar</packaging>
 	<description>Project for AWS Cloud Foundations</description>
 	<url/>
 	<licenses>

@@ -3,11 +3,17 @@ package com.Emiliano.AWSProject.Entities;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
 @Getter
 @Setter
+@Entity
 public class Profesor {
-    @NotNull(message = "El ID no puede ser nulo")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NotNull(message = "El número de empleado no puede ser nulo")
@@ -23,7 +29,7 @@ public class Profesor {
     String apellidos;
 
     @NotNull(message = "El número de empleado no puede ser nulo")
-    @Positive(message = "El número de empleado debe ser un número positivo")
+    @PositiveOrZero(message = "El número de empleado debe ser mayor o igual a 0")
     int horasClase;
     
 }

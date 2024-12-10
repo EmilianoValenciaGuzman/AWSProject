@@ -1,10 +1,19 @@
 package com.Emiliano.AWSProject.Entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
+import lombok.Getter;
+import lombok.Setter;
 
-
+@Getter
+@Setter
+@Entity
 public class Alumno {
-    @NotNull(message = "El ID no puede ser nulo")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotBlank(message = "El nombre no puede estar en blanco")
@@ -23,19 +32,9 @@ public class Alumno {
     @Positive(message = "El promedio debe ser un número positivo")
     private Double promedio;
 
+    private String fotoPerfilUrl;
 
-    public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
-
-    public String getNombres() { return nombres; }
-    public void setNombres(String nombres) { this.nombres = nombres; }
-
-    public String getApellidos() { return apellidos; }
-    public void setApellidos(String apellidos) { this.apellidos = apellidos; }
-
-    public String getMatricula() { return matricula; }
-    public void setMatricula(String matricula) { this.matricula = matricula; }
-
-    public Double getPromedio() { return promedio; }
-    public void setPromedio(Double promedio) { this.promedio = promedio; }
+    @NotNull(message = "La password no puede ser nula")
+    @NotBlank(message = "La password no puede estar en blanco")
+    private String password;
 }
